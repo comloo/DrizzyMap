@@ -1,57 +1,31 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
 
-
+<script type="text/javascript" src="jquery-2.1.4.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+          $("body").css("display", "none");
+          $("body").fadeIn(2000);
+          $("a.transition").click(function(event){
+            event.preventDefault();
+            linkLocation = this.href;
+            $("body").fadeOut(1000, redirectPage);      
+          });
+         
+    function redirectPage() {
+        window.location = linkLocation;
+    }
+    });
+</script>
+<style type="text/css">
+</style>
 <title>DrizzyMaps</title>
 </head>
 <body>
-
-<div id="header"> 
-<center><img src="long logo.png" alt="Title Logo"  /> </center>
-</div>
-
-<div id="map" class="left">
-		<style>
-            #map-canvas {
-			padding-left: 40px;
-            width: 1000px;
-            height: 700px;
-            }
-        </style>
-		<script src="https://maps.googleapis.com/maps/api/js"></script>
-        <script>
-          function initialize() {
-            var myLatlng = new google.maps.LatLng(43.7000, -79.4000);
-            var mapOptions = {
-			    center: myLatlng,
-              zoom: 10,
-              mapTypeId: google.maps.MapTypeId.ROADMAP
-            }
-            var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-			var marker = new google.maps.Marker({
-              position: myLatlng,
-              map: map,
-              title: 'The 6!',
-			  draggable: true
-            });
-          }
-          google.maps.event.addDomListener(window, 'load', initialize);
-        </script>
-		<div id="map-canvas"></div>
-
-</div>
-
-<div id="sidebar" class="right">
-	<p>sjhsfh</p>
-</div>
-<!--
-<div id="footer">
-<center>
-<p>Made in DrakeQuery.</p>
-</center>-->
+  <cover>
+  <center><a href="actual_page.html" class="transition"><img src="cover.png" alt="cover page"/></a></center>
+</cover>
 </body>
-
 </html>
