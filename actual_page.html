@@ -97,9 +97,9 @@ placeNewMarker(new google.maps.LatLng(array[minIndex].latlng[0], array[minIndex]
   alert("min"+ " " + minIndex);
   audioElement.setAttribute('autoplay', 'autoplay');
   audioElement.setAttribute('src', array[minIndex].song);
-  document.getElementById("title").textContent = array[minIndex].song.substring(0,array[minIndex].song.length-4);
+  document.getElementById("title").textContent = array[minIndex].song.substring(0,array[minIndex].song.length-4).toUpperCase();
   document.getElementById("cover").src = array[minIndex].album+".jpg";
-  document.getElementById("lyric").textContent = array[minIndex].line;
+  document.getElementById("lyric").textContent = array[minIndex].line.toUpperCase();
 });
 function placeMarker(location) {
 	if (!marker) {
@@ -139,9 +139,9 @@ map.setCenter(center);
 </div>
 <div id="sidebar" class="right">
 		<center>
-		<h1 id= "title"></h1>
-		<div class="title" >
-      <center><img src="" height="200px" id="cover"></center>
+		<h1 id= "title" font-family="Drake"></h1>
+		<div class="title" font-family="Drake">
+      <center><img src="" height="300px" id="cover"></center>
 			<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.js"></script>
 			<script>
 				var cw = $('.title').height();
@@ -152,20 +152,16 @@ map.setCenter(center);
 		</div>
 		
 		<div class="desc">
-			<h2 id = "lyric">Lyric</h2>
+			<h2 id = "lyric" font-family="Drake"></h2>
 			
 		</div>
 		</center>
 	</div>
 </div>
-	<!--<div id="footer">
+	<div id="footer">
 	<center>
 	<p>Made in DrakeQuery.</p>
 </center></div>
-<div class="container">
-  <div class="panel panel-default">
-    <div class="panel-body">A Basic Panel</div>
-  </div>
-</div>-->
+
 </body>
 </html>
