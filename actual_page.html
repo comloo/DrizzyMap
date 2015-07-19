@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
@@ -13,10 +13,10 @@
 <div id="map">
 <style>
 #map-canvas {		
-height: 700px;
-width: 60%;
-background-color: green;
-}
+		height: 700px;
+		width: 60%;
+		float: left;
+		}
 </style>
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script>
@@ -70,7 +70,7 @@ function initialize() {
 var myLatlng = new google.maps.LatLng(43.7000, -79.4000);
 var mapOptions = {
 center: myLatlng,
-zoom: 10,
+zoom: 11,
 mapTypeId: google.maps.MapTypeId.ROADMAP
 }
 map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -121,7 +121,9 @@ function placeNewMarker(location) {
         newMarker = new google.maps.Marker({
         position: location,
         map: map,
+		
         });
+		newMarker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
     }
     // Otherwise, simply update its location on the map.
     else { newMarker.setPosition(location); }
@@ -137,18 +139,38 @@ map.setCenter(center);
 <div id="map-canvas">
 </div>
 </div>
-<div id="sidebar">
-<p>test</p>
-</div>
+<div id="sidebar" class="right">
+		<center>
+		<h1>Title</h1>
+		<div class="title">
+			
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.js"></script>
+			<script>
+				var cw = $('.title').height();
+				$('.title').css({
+				'width': cw + 'px'
+				});
+			</script>
+			
+			
+			
+		</div>
+		
+		<div class="desc">
+			<h2>Lyric</h2>
+			
+		</div>
+		</center>
+	</div>
 </div>
 	<!--<div id="footer">
 	<center>
 	<p>Made in DrakeQuery.</p>
-</center></div>-->
+</center></div>
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-body">A Basic Panel</div>
   </div>
-</div>
+</div>-->
 </body>
 </html>
