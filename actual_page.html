@@ -1,54 +1,136 @@
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
 <div id="header"> 
 <center><img src="long logo.png" alt="Title Logo" width="100%" height="auto"  /> </center>
 </div>
 <body>
 <div id="container">
-	<div id="map">
-		<style>
-		#map-canvas {
-			
-            height: 700px;
-			width: 60%;
-			background-color: green;
-		}
-		</style>
-		<script src="https://maps.googleapis.com/maps/api/js"></script>
-        <script>
-			var map;
-          function initialize() {
-            var myLatlng = new google.maps.LatLng(43.7000, -79.4000);
-            var mapOptions = {
-			    center: myLatlng,
-              zoom: 10,
-              mapTypeId: google.maps.MapTypeId.ROADMAP
-            }
-            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-			var marker = new google.maps.Marker({
-              position: myLatlng,
-              map: map,
-              title: 'The 6!',
-			  draggable: true
-            });
-          }
-          google.maps.event.addDomListener(window, 'load', initialize);
-		  google.maps.event.addDomListener(window, "resize", function() {
-			 var center = map.getCenter();
-			 google.maps.event.trigger(map, "resize");
-			 map.setCenter(center); 
-			});
-        </script>
-		<div id="map-canvas">
-		</div>
-	</div>
-	<div id="sidebar">
-		<p>test</p>
-	</div>
+<div id="map">
+<style>
+#map-canvas {		
+height: 700px;
+width: 60%;
+background-color: green;
+}
+</style>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+$(document).ready(function(){
+    var audioElement = document.createElement('audio');
+	audioElement.setAttribute('autoplay', 'autoplay');
+	
+	$.get();
+	
+	audioElement.addEventListener("load", function() {
+	    audioElement.play();
+	}, true);
+});
+var array = [];
+var miss = {line:"'Sauga city, trip the pay day,", song:"Preach.mp3", album:"If You're Reading This It's Too Late", latlng: [43.6000, -79.6500]};
+array.push(miss);
+var kenn = {line:"I got real ones livin' past Kennedy Road," , song:"Energy.mp3", album:"If You're Reading This It's Too Late", latlng: [43.7631, -79.2801]};
+array.push(kenn);
+var law = {line:"She from the Jungle/ I take somebody else's car, drive there undercover," , song:"Jungle.mp3", album:"If You're Reading This It's Too Late", latlng: [43.7227, -79.4509]};
+array.push(law);
+var fyboul = {line:"This that Oliver, 40, Niko shit, man/ 15 Fort York shit, you know?" , song:"Know Yourself.mp3", album:"If You're Reading This It's Too Late", latlng: [43.6400, -79.3939]};
+array.push(fyboul);
+var haze = {line:"I'll tell 'em link up the valet at the Hazy,'" , song:"Used To.mp3", album:"If You're Reading This It's Too Late", latlng: [43.6707, -79.3938]};
+array.push(haze);
+var scar = {line:"Do you remember back to Weston Road, Scarlett Road?" , song:"You & the 6.mp3", album:"If You're Reading This It's Too Late", latlng: [43.6841, -79.5115]};
+array.push(scar);
+var west = {line:"Do you remember back to Weston Road, Scarlett Road?" , song:"You & the 6.mp3", album:"If You're Reading This It's Too Late", latlng: [43.6833, -79.4799]};
+array.push(west);
+var joso = {line:"Eating like I'm seated at Swish, Sotto, and Joso's," , song:"5AM in Toronto.mp3", album:"Single", latlng: [43.6751, -79.3961]};
+array.push(joso);
+var swish = {line:"Eating like I'm seated at Swish, Sotto, and Joso's," , song:"5AM in Toronto.mp3", album:"Single", latlng: [41.1685, -82.2094]};
+array.push(swish);
+var oak = {line:"Damn, that nigga always kept it so hood / Back when we would smoke good at the Oakwoods," , song:"9AM in Dallas.mp3", album:"Single", latlng: [43.6900, -79.4394]};
+array.push(oak);
+var boro = {line:"We keep it thorough, nigga/ Rap like this for all of my 'Boro niggas," , song:"Tuscan Leather.mp3", album:"Nothing Was The Same", latlng: [43.7729, -79.2576]};
+array.push(boro);
+var mark = {line:"I take Eglinton to 401 East and exit at Markham Road in the east end," , song:"Connect.mp3", album:"Nothing Was The Same", latlng: [43.8732,  -79.2597]};
+array.push(mark);
+var eg = {line:"I take Eglinton to 401 East and exit at Markham Road in the east end," , song:"Connect.mp3", album:"Nothing Was The Same", latlng: [43.7007, -79.4272]};
+array.push(eg);
+var muli = {line:"After hours of Il Minuto or Sotto Sotto, just talkin' women and vino," , song:"Pound Cake.mp3", album:"Nothing Was The Same", latlng: [43.700, -79.4306]};
+array.push(muli);
+var sotto = {line:"After hours of Il Minuto or Sotto Sotto, just talkin' women and vino," , song:"Pound Cake.mp3", album:"Nothing Was The Same", latlng: [43.6737, -79.3963]};
+array.push(sotto);
+var coul = {line:"I done kept it real from the jump/ Living at my mama's house, we'd argue every month," , song:"Started from the Bottom.mp3", album:"Nothing Was The Same", latlng: [39.3302, -82.1096]};
+array.push(coul);
+var glen = {line:"This for shorty up on Glengrove who love when I catch my tempo," , song:"Tuscan Leather.mp3", album:"Nothing Was The Same", latlng: [43.7078, -79.4589]};
+array.push(glen);
+var morn = {line:"This ain't the son you raised who used to take the Acura at 5 a.m. to go and shoot 'Degrassi' up on Morningside," , song:"Worst Behaviour.mp3", album:"Nothing Was The Same", latlng: [43.7927, -79.1959]};
+array.push(morn);
+var park = {line:"Apartment 1503, some couches and paintings/ When you record with two others that want the same things," , song:"The Ride.mp3", album:"Take Care", latlng: [43.6438, -79.4425]};
+array.push(park);
+var yyz = {line:"I haven't been inside Terminal 1 and 3 in so long/ I'm driving right up to it now, make sure you got your coat on," , song:"The Ride.mp3", album:"Take Care", latlng: [43.6918, -79.6290]};
+array.push(yyz);
+
+function findclosest() {
+    for( i =0; i <array.length; i++) {
+        var displacementx = lat - array[i].LatLng[0];
+        var displacementy = lng - arra[i].LatLng[1];
+        var displacement = Math.sqrt(Math.pow(displacementy,2) + Math.pow(displacementx,2))
+        if( displacement < min) {
+            min = displacement;
+            minIndex=i;
+        }
+    }
+}
+
+var map;
+function initialize() {
+var myLatlng = new google.maps.LatLng(43.7000, -79.4000);
+var mapOptions = {
+center: myLatlng,
+zoom: 10,
+mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+var marker = new google.maps.Marker({
+position: myLatlng,
+map: map,
+title: 'The 6!',
+draggable: true
+});
+google.maps.event.addListener(marker, 'dragend', function (event) {
+    var lat = this.getPosition().lat();
+    var lng = this.getPosition().lng();
+	var min = 1000;
+	var minIndex = null;
+	findclosest();
+	audioElement.setAttribute('src', array[minIndex].song);
+    audioElement.play();
+});
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, "resize", function() {
+var center = map.getCenter();
+google.maps.event.trigger(map, "resize");
+map.setCenter(center);
+});
+</script>
+<div id="map-canvas">
+</div>
+</div>
+<div id="sidebar">
+<p>test</p>
+</div>
 </div>
 	<!--<div id="footer">
 	<center>
 	<p>Made in DrakeQuery.</p>
 </center></div>-->
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">A Basic Panel</div>
+  </div>
+</div>
 </body>
 </html>
