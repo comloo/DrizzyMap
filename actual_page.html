@@ -64,6 +64,8 @@ array.push(yyz);
 
 var audioElement = document.createElement('audio');
 var map;
+var marker;
+var newMarker;
 function initialize() {
 var myLatlng = new google.maps.LatLng(43.7000, -79.4000);
 var mapOptions = {
@@ -72,15 +74,10 @@ zoom: 10,
 mapTypeId: google.maps.MapTypeId.ROADMAP
 }
 map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-var marker = new google.maps.Marker({
-position: myLatlng,
-map: map,
-title: 'The 6!',
-draggable: true
-});
-google.maps.event.addListener(marker, 'dragend', function (event) {
-    var lat = this.getPosition().lat();
-    var lng = this.getPosition().lng();
+google.maps.event.addListener(map, 'click', function(event) {
+   placeMarker(event.latLng);
+   var lat = event.latLng.lat();
+    var lng = event.latLng.lng();
 	  var min = 1000;
 	  var minIndex=0;
   for(var i=0 ; i<array.length; i++)
@@ -96,10 +93,39 @@ google.maps.event.addListener(marker, 'dragend', function (event) {
       minIndex=i;
     }
   }
+  //var newmarker = new google.maps.Marker({
+    //position: new google.maps.LatLng(array[minIndex].latlng[0], array[minIndex].latlng[1]),
+   // map: map
+  //});
+    placeNewMarker(new google.maps.LatLng(array[minIndex].latlng[0], array[minIndex].latlng[1]));
   alert("min"+ " " + minIndex);
   audioElement.setAttribute('autoplay', 'autoplay');
   audioElement.setAttribute('src', array[minIndex].song);
+  
 });
+function placeMarker(location) {
+	if (!marker) {
+        // Create the marker if it doesn't exist
+        marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: 'The 6!'
+        });
+    }
+    // Otherwise, simply update its location on the map.
+    else { marker.setPosition(location); }
+}
+function placeNewMarker(location) {
+	if (!newMarker) {
+        // Create the marker if it doesn't exist
+        newMarker = new google.maps.Marker({
+        position: location,
+        map: map,
+        });
+    }
+    // Otherwise, simply update its location on the map.
+    else { newMarker.setPosition(location); }
+}
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 google.maps.event.addDomListener(window, "resize", function() {
