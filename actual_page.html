@@ -18,6 +18,7 @@
 		float: left;
 		}
 </style>
+<script type="text/javascript" src="jquery-2.1.4.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script>
 var array = [];
@@ -55,7 +56,7 @@ var coul = {line:"I done kept it real from the jump/ Living at my mama's house, 
 array.push(coul);
 var glen = {line:"This for shorty up on Glengrove who love when I catch my tempo," , song:"Tuscan Leather.mp3", album:"Nothing Was The Same", latlng: [43.7078, -79.4589]};
 array.push(glen);
-var morn = {line:"This ain't the son you raised who used to take the Acura at 5 a.m. to go and shoot 'Degrassi' up on Morningside," , song:"Worst Behaviour.mp3", album:"Nothing Was The Same", latlng: [43.7927, -79.1959]};
+var morn = {line:"This ain't the son you raised who used to take the Acura at 5 a.m. to go and shoot 'Degrassi' up on Morningside," , song:"Worst Behavior.mp3", album:"Nothing Was The Same", latlng: [43.7927, -79.1959]};
 array.push(morn);
 var park = {line:"Apartment 1503, some couches and paintings/ When you record with two others that want the same things," , song:"The Ride.mp3", album:"Take Care", latlng: [43.6438, -79.4425]};
 array.push(park);
@@ -133,6 +134,7 @@ var center = map.getCenter();
 google.maps.event.trigger(map, "resize");
 map.setCenter(center);
 });
+</script>
 </script>
 <div id="map-canvas">
 </div>
