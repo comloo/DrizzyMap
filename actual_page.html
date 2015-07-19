@@ -93,15 +93,13 @@ google.maps.event.addListener(map, 'click', function(event) {
       minIndex=i;
     }
   }
-  //var newmarker = new google.maps.Marker({
-    //position: new google.maps.LatLng(array[minIndex].latlng[0], array[minIndex].latlng[1]),
-   // map: map
-  //});
-    placeNewMarker(new google.maps.LatLng(array[minIndex].latlng[0], array[minIndex].latlng[1]));
+placeNewMarker(new google.maps.LatLng(array[minIndex].latlng[0], array[minIndex].latlng[1]));
   alert("min"+ " " + minIndex);
   audioElement.setAttribute('autoplay', 'autoplay');
   audioElement.setAttribute('src', array[minIndex].song);
-  
+  document.getElementById("title").textContent = array[minIndex].song.substring(0,array[minIndex].song.length-4);
+  document.getElementById("cover").src = array[minIndex].album+".jpg";
+  document.getElementById("lyric").textContent = array[minIndex].line;
 });
 function placeMarker(location) {
 	if (!marker) {
@@ -141,9 +139,9 @@ map.setCenter(center);
 </div>
 <div id="sidebar" class="right">
 		<center>
-		<h1>Title</h1>
-		<div class="title">
-			
+		<h1 id= "title"></h1>
+		<div class="title" >
+      <center><img src="" height="200px" id="cover"></center>
 			<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.js"></script>
 			<script>
 				var cw = $('.title').height();
@@ -151,13 +149,10 @@ map.setCenter(center);
 				'width': cw + 'px'
 				});
 			</script>
-			
-			
-			
 		</div>
 		
 		<div class="desc">
-			<h2>Lyric</h2>
+			<h2 id = "lyric">Lyric</h2>
 			
 		</div>
 		</center>
