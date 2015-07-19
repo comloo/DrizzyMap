@@ -20,7 +20,7 @@
 </style>
 <script type="text/javascript" src="jquery-2.1.4.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js"></script>
-<script>
+<script type ="text/javascript">
 var array = [];
 var miss = {line:"'Sauga city, trip the pay day,", song:"Preach.mp3", album:"If You're Reading This It's Too Late", latlng: [43.6000, -79.6500]};
 array.push(miss);
@@ -85,9 +85,7 @@ google.maps.event.addListener(map, 'click', function(event) {
   {
     var displacementlat= lat - array[i].latlng[0];
     var displacementlng = lng - array[i].latlng[1];
-    alert(array[i].latlng[0]);
     var displacement = Math.sqrt(Math.pow(displacementlng,2)+ Math.pow(displacementlat,2));
-    alert("displacement:" + displacement);
     if(min>displacement)
     {
       min = displacement;
@@ -95,7 +93,6 @@ google.maps.event.addListener(map, 'click', function(event) {
     }
   }
 placeNewMarker(new google.maps.LatLng(array[minIndex].latlng[0], array[minIndex].latlng[1]));
-  alert("min"+ " " + minIndex);
   audioElement.setAttribute('autoplay', 'autoplay');
   audioElement.setAttribute('src', array[minIndex].song);
   document.getElementById("title").textContent = array[minIndex].song.substring(0,array[minIndex].song.length-4).toUpperCase();
@@ -135,11 +132,11 @@ google.maps.event.trigger(map, "resize");
 map.setCenter(center);
 });
 </script>
-</script>
 <div id="map-canvas">
 </div>
 </div>
 <div id="sidebar" class="right">
+  <sidebar>
 		<center>
 		<h1 id= "title" font-family="Drake"></h1>
 		<div class="title" font-family="Drake">
@@ -158,6 +155,7 @@ map.setCenter(center);
 			
 		</div>
 		</center>
+  </sidebar>
 	</div>
 </div>
 	<div id="footer">
